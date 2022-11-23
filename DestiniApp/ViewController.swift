@@ -22,6 +22,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     storyLabel.text = story0
+    choiceOneButton.setTitle(choise1, for: .normal)
+    choiceTwoButton.setTitle(choise2, for: .normal)
   }
 
   @IBAction func choiceMade(_ sender: UIButton) {
