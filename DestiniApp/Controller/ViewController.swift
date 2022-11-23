@@ -23,14 +23,27 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    storyLabel.text = stories[storyNumber].title
-    choiceOneButton.setTitle(stories[storyNumber].choice1, for: .normal)
-    choiceTwoButton.setTitle(stories[storyNumber].choice2, for: .normal)
+    updateUI()
+
   }
 
   @IBAction func choiceMade(_ sender: UIButton) {
+    let userChoise = sender.currentTitle!
     
+    if userChoise == stories[storyNumber].choice1 {
+      storyNumber += 1
+    } else if userChoise == stories[storyNumber].choice2 {
+      storyNumber += 2
+    }
+    updateUI()
+  }
+  
+  //MARK: Methods
+  
+  func updateUI() {
+    storyLabel.text = stories[storyNumber].title
+    choiceOneButton.setTitle(stories[storyNumber].choice1, for: .normal)
+    choiceTwoButton.setTitle(stories[storyNumber].choice2, for: .normal)
   }
   
 }
