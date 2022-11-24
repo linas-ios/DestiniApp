@@ -24,10 +24,9 @@ class ViewController: UIViewController {
   @IBAction func choiceMade(_ sender: UIButton) {
     let userChoises = sender.currentTitle!
     storyBrain.nextStory(userChoice: userChoises)
-    
-    
-    
+    updateUI()
   }
+  
   //MARK: Methods
   func updateUI() {
     storyLabel.text = storyBrain.getStory()
